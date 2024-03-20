@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    class Player
+    public class Player
     {
-        public int Score {  get; set; }
-        
         public bool IsPlayerTurn {  get; set; }
-
         public string Name { get; set; }
-
-
+        public int Score { get; set; }
     }
 }

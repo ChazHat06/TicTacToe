@@ -16,6 +16,6 @@ namespace TicTacToe
         public int Column3 { get; set; }
         public int Diag1 { get; set; }
         public int Diag2 { get; set; }
-    }
 
+    }
 }

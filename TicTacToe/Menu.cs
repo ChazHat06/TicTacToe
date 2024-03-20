@@ -45,12 +45,18 @@
 
         private void button4_Click(object sender, EventArgs e) //AI Medium
         {
-
+            Difficulty = "Medium";
+            PlayerVComputerMedium form1 = new PlayerVComputerMedium();
+            form1.ShowDialog();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e) //AI Hard
         {
-
+            Difficulty = "Hard";
+            PlayerVComputerHard form1 = new PlayerVComputerHard();
+            form1.ShowDialog();
+            this.Close();
         }
     }
 }

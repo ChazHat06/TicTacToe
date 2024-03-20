@@ -1,5 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
-
 namespace TicTacToe
 {
     public partial class PlayerVPlayer : Form
@@ -36,7 +34,6 @@ namespace TicTacToe
                     board[i, j] = " ";
                 }
             }
-
             button1.Text = " ";
             button2.Text = " ";
             button3.Text = " ";
@@ -518,7 +515,7 @@ namespace TicTacToe
                 lineTotals.Diag1 -= 1;
             }
         }
-
+        
         private void ComputerTurn()
         {
             ComputerMoveEasy();

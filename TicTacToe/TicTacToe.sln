@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "TicTacToe.cspr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classes", "Classes", "{22DC32E8-26B2-418F-AD49-153906D4C4EF}"
 	ProjectSection(SolutionItems) = preProject
+		Difficulty.cs = Difficulty.cs
 		Player.cs = Player.cs
 		Totals.cs = Totals.cs
 	EndProjectSection
