@@ -10,9 +10,11 @@ namespace TicTacToe
         Player Player2 = new Player();
         private int MovesTaken = 0;
         public string Difficulty { get; set; }
+        DateTime dateTime = new DateTime();
+        Stats stats = new Stats();
 
         public PlayerVPlayer()
-        { 
+        {
             InitializeComponent();
             setBoard(Size, Board);
             if (this.Difficulty == "null")
@@ -54,7 +56,7 @@ namespace TicTacToe
             MovesTaken = 0;
         }
 
-        private void  startPlayer(string Player)
+        private void startPlayer(string Player)
         {
             Random Random = new Random();
             int randint = Random.Next(0, 10);
@@ -80,7 +82,7 @@ namespace TicTacToe
 
             string CurrentPlayer = Player1.IsPlayerTurn ? "1" : "2";
 
-            if (lineTotals.Column1 == 3 || lineTotals.Column1 == -3 || lineTotals.Column2 == 3 || lineTotals.Column2 == -3 ||  lineTotals.Column3 == 3 || lineTotals.Column3 == -3)
+            if (lineTotals.Column1 == 3 || lineTotals.Column1 == -3 || lineTotals.Column2 == 3 || lineTotals.Column2 == -3 || lineTotals.Column3 == 3 || lineTotals.Column3 == -3)
             {
                 if (CurrentPlayer == "1")
                 {
@@ -148,6 +150,7 @@ namespace TicTacToe
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            dateTime = DateTime.Now;
 
         }
 
@@ -332,7 +335,7 @@ namespace TicTacToe
                 else
                     playerChange();
             }
-        
+
         }
 
         private void Button5()
@@ -415,7 +418,6 @@ namespace TicTacToe
             }
         }
 
-
         private void Button1()
         {
             if (this.Difficulty == "null")
@@ -493,7 +495,7 @@ namespace TicTacToe
                 {
                     ComputerTurn();
                 }
-                else 
+                else
                     playerChange();
             }
         }
@@ -515,7 +517,7 @@ namespace TicTacToe
                 lineTotals.Diag1 -= 1;
             }
         }
-        
+
         private void ComputerTurn()
         {
             ComputerMoveEasy();
@@ -591,6 +593,12 @@ namespace TicTacToe
                     Complete = true;
                 }
             } while (Complete == false);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TimeSpan dateTime1 = DateTime.Now - dateTime;
+            int TimeSpentPlaying = (int)dateTime1.TotalSeconds;
         }
     }
 }

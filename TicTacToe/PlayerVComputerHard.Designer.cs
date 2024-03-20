@@ -188,36 +188,37 @@
             // startNewGameToolStripMenuItem
             // 
             startNewGameToolStripMenuItem.Name = "startNewGameToolStripMenuItem";
-            startNewGameToolStripMenuItem.Size = new Size(241, 34);
+            startNewGameToolStripMenuItem.Size = new Size(270, 34);
             startNewGameToolStripMenuItem.Text = "Start New Game";
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(238, 6);
+            toolStripSeparator1.Size = new Size(267, 6);
             // 
             // saveGameToolStripMenuItem
             // 
             saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
-            saveGameToolStripMenuItem.Size = new Size(241, 34);
+            saveGameToolStripMenuItem.Size = new Size(270, 34);
             saveGameToolStripMenuItem.Text = "Save Game";
             // 
             // loadGameToolStripMenuItem
             // 
             loadGameToolStripMenuItem.Name = "loadGameToolStripMenuItem";
-            loadGameToolStripMenuItem.Size = new Size(241, 34);
+            loadGameToolStripMenuItem.Size = new Size(270, 34);
             loadGameToolStripMenuItem.Text = "Load Game";
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(238, 6);
+            toolStripSeparator2.Size = new Size(267, 6);
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(241, 34);
+            exitToolStripMenuItem.Size = new Size(270, 34);
             exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // PlayerVComputerHard
             // 

@@ -20,3 +20,5 @@ D:\C#\TicTacToe\obj\Debug\net8.0-windows\TicTacToe.PlayerVComputerEasy.resources
 d:\C#\TicTacToe\obj\Debug\net8.0-windows\TicTacToe.sourcelink.json
 D:\C#\TicTacToe\obj\Debug\net8.0-windows\TicTacToe.PlayerVComputerMedium.resources
 D:\C#\TicTacToe\obj\Debug\net8.0-windows\TicTacToe.PlayerVComputerHard.resources
+D:\C#\TicTacToe\obj\Debug\net8.0-windows\TicTacToe.LifetimeStats.resources
+D:\C#\TicTacToe\obj\Debug\net8.0-windows\TicTacToe.StatsForm.resources

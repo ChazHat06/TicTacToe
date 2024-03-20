@@ -21,8 +21,11 @@ namespace TicTacToe
         Player Player1 = new Player();
         Player Player2 = new Player();
         private int MovesTaken = 0;
+        Stats stats = new Stats();
+        DateTime dateTime;
         public PlayerVComputerMedium()
         {
+            dateTime = DateTime.Now;
             InitializeComponent();
         }
         private bool isWin(LineTotals lineTotals)
@@ -36,48 +39,55 @@ namespace TicTacToe
             {
                 Player1.Score++;
                 ScoreLabel1.Text = "Player 1 Score: " + Player1.Score;
+                stats.UpdateWonGames();
+                stats.UpdatePlayedGames();
                 return true;
-                setBoard(Size, Board);
             }
             else if (lineTotals.Row1 == 3 || lineTotals.Row2 == 3 || lineTotals.Row3 == 3)
             {
                 Player1.Score++;
                 ScoreLabel1.Text = "Player 1 Score: " + Player1.Score;
+                stats.UpdateWonGames();
+                stats.UpdatePlayedGames();
                 return true;
-                setBoard(Size, Board);
             }
             else if (lineTotals.Diag1 == 3 || lineTotals.Diag2 == 3)
             {
                 Player1.Score++;
                 ScoreLabel1.Text = "Player 1 Score: " + Player1.Score;
+                stats.UpdateWonGames();
+                stats.UpdatePlayedGames();
                 return true;
-                setBoard(Size, Board);
             }
             else if (lineTotals.Column1 == -3 || lineTotals.Column2 == -3 || lineTotals.Column3 == -3)
             {
                 Player2.Score++;
                 ScoreLabel2.Text = "Player 2 Score: " + Player2.Score;
+                stats.UpdateLostGames();
+                stats.UpdatePlayedGames();
                 return true;
-                setBoard(Size, Board);
             }
             else if (lineTotals.Row1 == -3 || lineTotals.Row2 == -3 || lineTotals.Row3 == -3)
             {
                 Player2.Score++;
                 ScoreLabel2.Text = "Player 2 Score: " + Player2.Score;
+                stats.UpdateLostGames();
+                stats.UpdatePlayedGames();
                 return true;
-                setBoard(Size, Board);
             }
             else if (lineTotals.Diag1 == -3 || lineTotals.Diag2 == -3)
             {
                 Player2.Score++;
                 ScoreLabel2.Text = "Player 2 Score: " + Player2.Score;
+                stats.UpdateLostGames();
+                stats.UpdatePlayedGames();
                 return true;
-                setBoard(Size, Board);
             }
             else if (MovesTaken == 9)
             {
+                stats.UpdateDrewGames();
+                stats.UpdatePlayedGames();
                 return true;
-                setBoard(Size, Board);
             }
             else
                 return false;
@@ -500,6 +510,7 @@ namespace TicTacToe
             lineTotals.Diag2 += 1;
             button1.Enabled = false;
             button1.Text = "X";
+            stats.UpdatePlacedSquares();
             if (!isWin(lineTotals))
                 ComputerMove();
             else
@@ -513,6 +524,7 @@ namespace TicTacToe
             lineTotals.Row3 += 1;
             button2.Enabled = false;
             button2.Text = "X";
+            stats.UpdatePlacedSquares();
             if (!isWin(lineTotals))
                 ComputerMove();
             else
@@ -527,6 +539,7 @@ namespace TicTacToe
             lineTotals.Diag1 += 1;
             button3.Enabled = false;
             button3.Text = "X";
+            stats.UpdatePlacedSquares();
             if (!isWin(lineTotals))
                 ComputerMove();
             else
@@ -540,6 +553,7 @@ namespace TicTacToe
             lineTotals.Column1 += 1;
             button4.Enabled = false;
             button4.Text = "X";
+            stats.UpdatePlacedSquares();
             if (!isWin(lineTotals))
                 ComputerMove();
             else
@@ -555,6 +569,7 @@ namespace TicTacToe
             lineTotals.Diag2 += 1;
             button5.Enabled = false;
             button5.Text = "X";
+            stats.UpdatePlacedSquares();
             if (!isWin(lineTotals))
                 ComputerMove();
             else
@@ -568,6 +583,7 @@ namespace TicTacToe
             lineTotals.Row2 += 1;
             button6.Enabled = false;
             button6.Text = "X";
+            stats.UpdatePlacedSquares();
             if (!isWin(lineTotals))
                 ComputerMove();
             else
@@ -582,6 +598,7 @@ namespace TicTacToe
             lineTotals.Diag1 += 1;
             button7.Enabled = false;
             button7.Text = "X";
+            stats.UpdatePlacedSquares();
             if (!isWin(lineTotals))
                 ComputerMove();
             else
@@ -595,6 +612,7 @@ namespace TicTacToe
             lineTotals.Column2 += 1;
             button8.Enabled = false;
             button8.Text = "X";
+            stats.UpdatePlacedSquares();
             if (!isWin(lineTotals))
                 ComputerMove();
             else
@@ -609,10 +627,19 @@ namespace TicTacToe
             lineTotals.Diag2 += 1;
             button9.Enabled = false;
             button9.Text = "X";
+            stats.UpdatePlacedSquares();
             if (!isWin(lineTotals))
                 ComputerMove();
             else
                 setBoard(Size, Board);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TimeSpan timeSpan = DateTime.Now - dateTime;
+            int timeSpanSecs = (int)timeSpan.TotalSeconds;
+            stats.UpdateTimeSpentPlaying(timeSpanSecs);
+            this.Close();
         }
     }
 }

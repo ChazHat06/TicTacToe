@@ -7,8 +7,6 @@
         
         public Menu()
         {
-            
-            
             InitializeComponent();
         }
 
@@ -32,7 +30,9 @@
 
         private void button3_Click(object sender, EventArgs e) //View Lifetime Stats
         {
-
+            StatsForm form1 = new StatsForm();
+            form1.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e) // AI Easy
